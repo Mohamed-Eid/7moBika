@@ -5,7 +5,6 @@ import playsound
 
 w = wmi.WMI(namespace="root\\OpenHardwareMonitor")
 sensors = w.Sensor()
-gpu_temp = 0
 
 
 def playSound():
@@ -16,10 +15,10 @@ def main():
     while True:
         for sensor in sensors:
             if sensor.SensorType == u'Temperature' and 'GPU' in sensor.Name:
-                gpu_temp = sensor.Value
-                print("GPU: {}".format(gpu_temp))
-                playSound()
-                return
+                print("GPU: {}".format(sensor.Value))
+                if sensor.Value > 64:
+                    playSound()
+                    return
         time.sleep(1)
 
 
