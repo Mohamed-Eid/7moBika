@@ -4,9 +4,18 @@ import playsound
 import PySimpleGUI as sg
 import threading
 import pythoncom
+from win10toast import ToastNotifier
 
 
-def playSound():
+def A7naHntero():
+    toast = ToastNotifier()
+    toast.show_toast(
+        "حمو بيكا",
+        "إحنا هنيطيرو ولا إيه ؟؟",
+        duration=20,
+        icon_path="A7naHntero.ico",
+        threaded=True,
+    )
     playsound.playsound('7mo.mp3', True)
 
 
@@ -21,7 +30,7 @@ def updateTemp(window, threshold=64):
                 print("GPU: {}".format(sensor.Value))
                 window.write_event_value('UpdateTemp', sensor.Value)
                 if sensor.Value > int(threshold):
-                    playSound()
+                    A7naHntero()
                     return
         time.sleep(1)
 
