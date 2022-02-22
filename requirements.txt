@@ -1,2 +1,7 @@
 playsound==1.2.2
+psutil==5.9.0
+pypiwin32==223
+PySimpleGUI==4.57.0
+pywin32==303
+pywin32-ctypes==0.2.0
 WMI==1.5.1
