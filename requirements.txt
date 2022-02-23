@@ -5,3 +5,4 @@ PySimpleGUI==4.57.0
 pywin32==303
 pywin32-ctypes==0.2.0
 WMI==1.5.1
+win10toast==0.9
